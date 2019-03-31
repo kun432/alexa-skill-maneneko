@@ -1,0 +1,74 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "まねネコ",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "NekoIntent",
+                    "slots": [
+                        {
+                            "name": "user_say_slot",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                " {user_say_slot}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        " {user_say_slot}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "NekoIntent",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "user_say_slot",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1493116624436.527685659610"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1493116624436.527685659610",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "ニャンかハニャしかけるニャン"
+                    }
+                ]
+            }
+        ]
+    }
+}
